@@ -26,6 +26,19 @@ app.use(express.static('public')) // Aplicacao aceita arquivos externos
     res.render('registerCharacter.ejs')
   })
 
+  app.post("/saveCharacter",(req, res) => {
+    var name = req.body.name
+    var description = req.body.description
+    var picture = req.body.picture
+    Character.create({
+      name: name,
+      description: description,
+      picture: picture
+    }).then(() =>{
+        res.redirect("/")
+    })
+})
+
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })

@@ -6,21 +6,27 @@
 
 
         <h3>Register new Character</h3>
+        <form  method="POST" action="/saveCharacter" >
 
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Agent name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+           
+        
+                <label for="exampleFormControlInput1" class="form-label">Agent name</label>
+                <input type="text" class="form-control" name="name">
+            </div>
 
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile">
-          </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" name="description" rows="3"></textarea>
+            </div>
 
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" name="picture">
+            </div>
+
+            <button class="btn btn-dark">Send</button>
+            </form>
     </div>
 
 </body>

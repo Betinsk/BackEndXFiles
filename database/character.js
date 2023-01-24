@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const connection = require('./database')
 
-const Character =  connection.define('character', {
+const Character =  connection.define('characters', {
     name:{
         type: Sequelize.STRING,
         allowNull:false
