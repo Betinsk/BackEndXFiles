@@ -19,7 +19,7 @@ app.use(express.static('public')) // Aplicacao aceita arquivos externos
   app.use(bodyParser.json())
 
   app.get('/', (req, res) => {
-    res.send('X Files')
+    res.render('index.ejs')
   })
 
   app.get('/register', (req, res) => {
@@ -35,9 +35,22 @@ app.use(express.static('public')) // Aplicacao aceita arquivos externos
       description: description,
       picture: picture
     }).then(() =>{
-        res.redirect("/")
+        res.redirect('/')
     })
 })
+
+app.get("/request/:id", (req, res) => {
+  var id = req.params.id
+  Character.findOne ({
+    where: {id:id}
+  }).then(character => {
+    console.log(character)
+    res.render("index.ejs",{
+      character:character
+    })
+  })
+})
+
 
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

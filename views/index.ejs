@@ -1,0 +1,23 @@
+<%- include ('partials/header') %>
+
+<body>
+
+<h1>Register character</h1>
+
+<a href="registerCharacter">Register</a>
+
+<div class="container">
+    
+    <br>
+    <% character.forEach(characters => { %> 
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p><%= characters.name %></p>
+            </div>
+  <%  }) %>
+
+</div>
+
+</body>
+</html>
